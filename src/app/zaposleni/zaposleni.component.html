@@ -1,0 +1,28 @@
+<div class="container">
+  <div>
+    <input type="text" [(ngModel)]="terminPretrage">
+    <button (click)="Pretrazi()">Pretrazi</button>
+    <button (click)="PonistiPretragu()">Ponisti pretragu</button>
+  </div>
+
+  <button class="btn btn-outline-primary" (click)="PonistiPretragu()">Svi zaposlenici</button>
+  <button class="btn btn-outline-primary" *ngFor='let mjesto of radnaMjesta' (click)="FiltrirajZaposlene(mjesto)">
+    {{ mjesto }} </button>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Ime</th>
+        <th>Starost</th>
+        <th>Radno mjesto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let zaposleni of sviZaposleniciZaDisplay">
+        <td> {{ zaposleni.ime }} </td>
+        <td> {{ zaposleni.starost }} </td>
+        <td> {{ zaposleni.radnoMjesto }} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
