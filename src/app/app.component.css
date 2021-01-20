@@ -1,0 +1,7 @@
+mat-sidenav-content {
+  min-height: 100vh;
+}
+ul {
+  list-style-type: none;
+  padding: 10px;
+}

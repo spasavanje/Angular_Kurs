@@ -5,15 +5,16 @@ import { DrugaKomponentaComponent } from './druga-komponenta/druga-komponenta.co
 import { ZaposleniComponent } from './zaposleni/zaposleni.component';
 import { TransakcijeComponent } from './transakcije/transakcije.component';
 import { DrzaveComponent } from './drzave/drzave.component';
-import { ArminKompComponent } from './armin-komp/armin-komp.component';
+import { UnesiZaposlenogComponent } from './unesi-zaposlenog/unesi-zaposlenog.component';
 
 const routes: Routes = [
   { path: '', component: PrvaKomponentaComponent },
   { path: 'druga', component: DrugaKomponentaComponent },
   { path: 'zaposleni', component: ZaposleniComponent },
   { path: 'transakcije', component: TransakcijeComponent },
-  { path: 'drzave', component: DrzaveComponent }
-  ];
+  { path: 'drzave', component: DrzaveComponent },
+  { path: 'novizaposleni', component: UnesiZaposlenogComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

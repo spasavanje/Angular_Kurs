@@ -1,0 +1,17 @@
+<div class="container">
+  <div *ngIf="porukaZaKorisnika">
+    <p>{{ porukaZaKorisnika }}</p>
+  </div>
+  <form [formGroup]="zaposlenik" (ngSubmit)="onSubmit(zaposlenik)">
+    <mat-form-field>
+      <input matInput placeholder="Ime" type="text" formControlName="ime">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Starost" type="number" formControlName="starost">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Radno mjesto" type="text" formControlName="radnoMjesto">
+    </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="zaposlenik.invalid">Snimi</button>
+  </form>
+</div>

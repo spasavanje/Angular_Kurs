@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalniService } from '../globalni.service';
 
+
 @Component({
   selector: 'app-zaposleni',
   templateUrl: './zaposleni.component.html',
@@ -15,10 +16,9 @@ export class ZaposleniComponent implements OnInit {
   radnaMjesta: any;
   terminPretrage: string = '';
 
-  constructor(private globalni: GlobalniService) { }
+  constructor(private globalni: GlobalniService, private router: Router) { }
 
   ngOnInit(): void {
-
     this.globalni.getZaposlenici().subscribe((rezultat: any) => {
       this.sviZaposlenici = rezultat;
       this.sviZaposleniciZaDisplay = rezultat;
@@ -31,12 +31,15 @@ export class ZaposleniComponent implements OnInit {
   }
 
   Pretrazi() {
-    this.sviZaposleniciZaDisplay = this.sviZaposlenici.filter((zaposlenik) => zaposlenik.ime.toLowerCase().includes(this.terminPretrage.toLowerCase()) || zaposlenik.radnoMjesto.toLowerCase().includes(this.terminPretrage.toLowerCase()));
+    this.sviZaposleniciZaDisplay = this.sviZaposlenici.filter((zaposlenik) => zaposlenik.ime.toLowerCase().includes(this.terminPretrage.toLowerCase()) || zaposlenik.radnoMjesto.toLowerCase().includes(this.terminPretrage.toLowerCase()) || zaposlenik.starost.toString() === this.terminPretrage);
   }
 
   PonistiPretragu() {
     this.sviZaposleniciZaDisplay = this.sviZaposlenici;
   }
 
+  UnesiZaposlenog() {
+    this.router.navigate(['/novizaposleni'])
+  }
 
 }

@@ -10,7 +10,12 @@ import { ZaposleniComponent } from './zaposleni/zaposleni.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TransakcijeComponent } from './transakcije/transakcije.component';
 import { DrzaveComponent } from './drzave/drzave.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UnesiZaposlenogComponent } from './unesi-zaposlenog/unesi-zaposlenog.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,12 +24,18 @@ import { DrzaveComponent } from './drzave/drzave.component';
     ZaposleniComponent,
     TransakcijeComponent,
     DrzaveComponent,
+    UnesiZaposlenogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSidenavModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
