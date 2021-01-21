@@ -1,8 +1,10 @@
 <div class="container">
   <div>
-    <input type="text" [(ngModel)]="terminPretrage">
-    <button (click)="Pretrazi()">Pretrazi</button>
-    <button (click)="PonistiPretragu()">Ponisti pretragu</button>
+    <mat-form-field>
+      <input matInput placeholder="Unesite termin za pretragu" type="text" [(ngModel)]="terminPretrage">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="Pretrazi()">Pretrazi</button>
+    <button mat-raised-button color="accent" (click)="PonistiPretragu()">Ponisti pretragu</button>
   </div>
 
   <button class="btn btn-outline-primary" (click)="PonistiPretragu()">Svi zaposlenici</button>
@@ -25,4 +27,7 @@
       </tr>
     </tbody>
   </table>
+
+  <button mat-raised-button (click)="noviZaposleni()">Novi zaposleni</button>
+
 </div>

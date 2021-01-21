@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalniService } from '../globalni.service';
+import { ZaposlenikModel } from '../interfejsi/zaposlenik-model';
 
 @Component({
   selector: 'app-zaposleni',
@@ -9,13 +10,13 @@ import { GlobalniService } from '../globalni.service';
 })
 export class ZaposleniComponent implements OnInit {
 
-  sviZaposlenici: any;
-  sviZaposleniciZaDisplay: any;
+  sviZaposlenici: ZaposlenikModel[] = [];
+  sviZaposleniciZaDisplay: ZaposlenikModel[] = [];
 
   radnaMjesta: any;
   terminPretrage: string = '';
 
-  constructor(private globalni: GlobalniService) { }
+  constructor(private globalni: GlobalniService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -38,5 +39,8 @@ export class ZaposleniComponent implements OnInit {
     this.sviZaposleniciZaDisplay = this.sviZaposlenici;
   }
 
+  noviZaposleni() {
+    this.router.navigate(['/novizaposlenik']);
+  }
 
 }
